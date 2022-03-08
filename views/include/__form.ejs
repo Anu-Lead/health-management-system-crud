@@ -1,0 +1,47 @@
+
+                <!-- FORM HANDLING -->
+                <form action="api/users" method="post" id="add_user">
+                    <div class="new_user">
+                        <div class="form-group">
+                            <label for="name" class="text-light">Name</label>
+                            <input type="hidden" name="id" value="<%= user._id%>">
+                            <input type="text" name="name" value="<%= user.name%>" placeholder="New Patient">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Email" class="text-light">Email</label>
+                            <input type="text" name="email" value="<%= user.email%>" placeholder="myhealthcare@doc.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Gender" class="text-light">Gender</label>
+                            <div class="radio inline">
+                                <input type="radio" id="radio-2" name="gender" value="Male"<%= user.gender == "Male"?'checked':"%>>
+                                <label for="radio-2" class="radio-label">Male</label>
+                            </div>
+
+                            <div class="radio inline">
+                                <input type="radio" id="radio-3" name="gender" value="Female" <%= user.gender == "Female"?'checked':"%>>
+                                <label for="radio-3" class="radio-label">Female</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Gender" class="text-light">Reason(s)</label>
+                            <div class="radio inline">
+                                <input type="radio" id="radio-4" name="status" value="Book_Lab_Test"<%= user.status == "Book_"?'checked':"%>>
+                                <label for="radio-4" class="radio-label">Book Lab Test</label>
+                            </div>
+
+                            <div class="radio inline">
+                                <input type="radio" id="radio-5" name="status" value="On_Appointment"<%= user.status == "Female"?'checked':"%>>
+                                <label for="radio-5" class="radio-label">Medical Checkup / Doctor's Appointment</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn text-dark update">Save</button>
+                        </div>
+
+                    </div>
+                </form>

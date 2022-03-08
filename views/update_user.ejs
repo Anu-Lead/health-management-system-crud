@@ -1,0 +1,77 @@
+<!-- Include Header  -->
+<%include('include/_header')%>
+<!-- /Incluse Header -->
+
+   <!-- Main Site -->
+        <main id="site-main">
+            <div class="container">
+                <div class="box-nav d-flex justify-between">
+                    <div class="filter">
+                        <a href="/"><i class="fas fa-angle-double-left"></i>All Clients/Patients</a>
+                    </div>
+                </div>
+                <div class="form-title text-center">
+                    <h2 class="text-dark">Update Clients/Patients</h2>
+                    <span class="text-light">Use this form below to update an appointment</span>
+                </div>
+
+                <!-- add user form -->
+                <!-- form handling -->
+                <!-- <%-include('include/__form')%> -->
+            
+                <form method="POST" id="update_user">
+                <!-- <form action="api/users" method="post" id="add_user"> -->
+                    <div class="new_user">
+                        <div class="form-group">
+                            <label for="name" class="text-light">Name</label>
+                            <input type="hidden" name="id" value="<%= user._id%>">
+                            <input type="text" name="name" value="<%= user.name%>" placeholder="New Patient">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Email" class="text-light">Email</label>
+                            <input type="text" name="email" value="<%= user.email%>" placeholder="myhealthcare@doc.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Gender" class="text-light">Gender</label>
+                            <div class="radio inline">
+                                <input type="radio" id="radio-2" name="gender" value="Male"<%= user.gender=='Male'?'checked':"%>>
+                                <label for="radio-2" class="radio-label">Male</label>
+                            </div>
+
+                            <div class="radio inline">
+                                <input type="radio" id="radio-3" name="gender" value="Female"<%= user.gender =='Female'?'checked':"%>>
+                                <label for="radio-3" class="radio-label">Female</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Gender" class="text-light">Reason(s)</label>
+                            <div class="radio inline">
+                                <input type="radio" id="radio-4" name="status" value="Book_Lab_Test"<%= user.status == 'Book_Lab_Test'?'checked':"%>>
+                                <label for="radio-4" class="radio-label">Book Lab Test</label>
+                            </div>
+
+                            <div class="radio inline">
+                                <input type="radio" id="radio-5" name="status" value="On_Appointment"<%= user.status == 'On_Appointment'?'checked':"%>>
+                                <label for="radio-5" class="radio-label">Medical Checkup / Doctor's Appointment</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn text-dark update">Save</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </main>
+
+
+     <!-- /Main Site -->
+
+<!-- Include Footer  -->
+<%include('include/_footer')%>
+<!-- /Include Footer --> 
+
